@@ -1,0 +1,19 @@
+# Update system
+sudo yum update -y
+
+# Install Python 3 and pip
+sudo yum install python3 python3-pip -y
+
+# Install common scraping libraries
+pip3 install requests selenium webdriver-manager
+
+# If using Selenium with Chrome (a bit more complex on Amazon Linux):
+# Install Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+sudo yum install -y ./google-chrome-stable_current_x86_64.rpm
+
+# Install ChromeDriver
+wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+sudo mv chromedriver /usr/local/bin/
+sudo chmod +x /usr/local/bin/chromedriver
