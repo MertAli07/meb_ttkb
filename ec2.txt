@@ -17,3 +17,8 @@ wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linu
 unzip chromedriver_linux64.zip
 sudo mv chromedriver /usr/local/bin/
 sudo chmod +x /usr/local/bin/chromedriver
+
+# Install Git (if needed)
+sudo yum install git -y
+
+git clone https://github.com/MertAli07/meb_ttkb.git
