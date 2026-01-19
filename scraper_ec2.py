@@ -10,7 +10,7 @@ import os
 from urllib.parse import urljoin
 
 TARGET_TEXT = "Mevzuat - KYS"
-S3_BUCKET_NAME = "goaltech-poc-ai-assistant"
+S3_BUCKET_NAME = "goaltech-meb-ttkb"
 S3_OUTPUT_KEY = os.getenv("S3_OUTPUT_KEY", "extract-links/mertali.json")
 
 
