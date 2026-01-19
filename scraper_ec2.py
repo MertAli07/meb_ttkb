@@ -6,9 +6,12 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 import json
+import os
 from urllib.parse import urljoin
 
 TARGET_TEXT = "Mevzuat - KYS"
+S3_BUCKET_NAME = "goaltech-poc-ai-assistant"
+S3_OUTPUT_KEY = os.getenv("S3_OUTPUT_KEY", "extract-links/mertali.json")
 
 
 def scrape_mevzuat_kys_links():
@@ -807,6 +810,29 @@ def scrape_mevzuat_kys_links():
     return links_found
 
 
+def upload_links_to_s3(links, bucket_name, object_key):
+    try:
+        import boto3
+    except ModuleNotFoundError:
+        print("boto3 is not installed; skipping S3 upload.")
+        return False
+
+    try:
+        s3_client = boto3.client("s3")
+        payload = json.dumps(links, ensure_ascii=False, indent=2)
+        s3_client.put_object(
+            Bucket=bucket_name,
+            Key=object_key,
+            Body=payload.encode("utf-8"),
+            ContentType="application/json; charset=utf-8",
+        )
+        print(f"Uploaded JSON output to s3://{bucket_name}/{object_key}")
+        return True
+    except Exception as exc:
+        print(f"Failed to upload JSON to S3: {exc}")
+        return False
+
+
 if __name__ == "__main__":
     print(f"Starting scraper for MEB TTKB '{TARGET_TEXT}' dropdown links...")
     print("=" * 60)
@@ -823,6 +849,8 @@ if __name__ == "__main__":
 
     print(f"\nLinks saved to {output_file}")
 
+    upload_links_to_s3(links, S3_BUCKET_NAME, S3_OUTPUT_KEY)
+
     # Also print JSON output
-    print("\nJSON Output:")
-    print(json.dumps(links, ensure_ascii=False, indent=2))
+    # print("\nJSON Output:")
+    # print(json.dumps(links, ensure_ascii=False, indent=2))
