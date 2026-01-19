@@ -16,18 +16,24 @@ from selenium.webdriver.support import expected_conditions as EC
 TARGET_KEYWORD = "Mevzuat"
 BASE_URL = "https://ttkb.meb.gov.tr/"
 OUTPUT_FILE = "ttkb_mevzuat_full_data.json"
+S3_BUCKET_NAME = "goaltech-poc-ai-assistant"
+S3_OUTPUT_KEY = os.getenv("S3_OUTPUT_KEY", "extract-links/ttkb_mevzuat_full_data.json")
 
 # --- YARDIMCI FONKSİYONLAR ---
 
 def setup_driver():
+    # Setup Chrome options - run headless for EC2
     chrome_options = Options()
     chrome_options.add_argument("--headless=new")
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.add_argument('--disable-gpu')
-    chrome_options.add_argument('--window-size=1920,1080')
-    chrome_options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36')
-    
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--window-size=1920,1080")
+    chrome_options.add_argument(
+        "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    )
+
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=chrome_options)
     return driver
@@ -194,7 +200,7 @@ def scrape_content_page(parent_item):
                         "text": text,
                         "url": full_url,
                         "path_list": new_path,
-                        "path_string": " > ".join(new_path),
+                        "path": " > ".join(new_path),
                         "data_type": dtype,
                         "source": "PAGE_CONTENT"
                     }
@@ -205,6 +211,29 @@ def scrape_content_page(parent_item):
         print(f"    Hata ({url}): {e}")
         
     return found_files
+
+
+def upload_links_to_s3(links, bucket_name, object_key):
+    try:
+        import boto3
+    except ModuleNotFoundError:
+        print("boto3 is not installed; skipping S3 upload.")
+        return False
+
+    try:
+        s3_client = boto3.client("s3")
+        payload = json.dumps(links, ensure_ascii=False, indent=2)
+        s3_client.put_object(
+            Bucket=bucket_name,
+            Key=object_key,
+            Body=payload.encode("utf-8"),
+            ContentType="application/json; charset=utf-8",
+        )
+        print(f"Uploaded JSON output to s3://{bucket_name}/{object_key}")
+        return True
+    except Exception as exc:
+        print(f"Failed to upload JSON to S3: {exc}")
+        return False
 
 # --- ANA ÇALIŞTIRMA ---
 
@@ -235,3 +264,5 @@ if __name__ == "__main__":
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(final_results, f, ensure_ascii=False, indent=2)
     print(f"Veriler '{OUTPUT_FILE}' dosyasına kaydedildi.")
+
+    upload_links_to_s3(final_results, S3_BUCKET_NAME, S3_OUTPUT_KEY)
