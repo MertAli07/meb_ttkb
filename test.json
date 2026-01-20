@@ -1,178 +1,26 @@
+[{
+    "question": "Yurt içinde denklik işlemi yaptırmak isteyen Türkiye Cumhuriyeti vatandaşları, başvuru sırasında kimliklerini doğrulamak için hangi belgeyi ibraz etmek zorundadır?",
+    "ground_truth": "T.C. Kimlik Kartı veya Nüfus Cüzdanı.",
+    "ai_answer": "Yurt içinde denklik işlemi yaptırmak isteyen Türkiye Cumhuriyeti vatandaşları, başvuru sırasında kimliklerini doğrulamak için Türkiye Cumhuriyeti kimlik kartı veya Türkiye Cumhuriyeti nüfus cüzdanı ibraz etmek zorundadırlar. [1]  Ayrıca, T.C. vatandaşlarının Türkiye Cumhuriyeti kimlik numaraları ile başvuru yapmaları esastır. Başvuru sahipleri denklik işlemi için e-Denklik sistemi üzerinden Millî Eğitim Bakanlığı Denklik Başvuru Formu'nu (EK-1) eksiksiz doldurmak ve ıslak imza ile imzalamak zorundadır. "
+},
+
 {
-    "AmiLaunchIndex": 0,
-    "Architecture": "x86_64",
-    "BlockDeviceMappings": [
-      {
-        "DeviceName": "/dev/xvda",
-        "Ebs": {
-          "AttachTime": "2026-01-19T10:18:28Z",
-          "DeleteOnTermination": true,
-          "Status": "attached",
-          "VolumeId": "vol-06884dc22fdc27700"
-        }
-      }
-    ],
-    "BootMode": "uefi-preferred",
-    "CapacityReservationSpecification": {
-      "CapacityReservationPreference": "open"
-    },
-    "ClientToken": "7e8d60ab-1c9c-4e5d-99c3-2f3ff991039a",
-    "CpuOptions": {
-      "CoreCount": 1,
-      "ThreadsPerCore": 1
-    },
-    "CurrentInstanceBootMode": "legacy-bios",
-    "EbsOptimized": false,
-    "EnaSupport": true,
-    "EnclaveOptions": {
-      "Enabled": false
-    },
-    "HibernationOptions": {
-      "Configured": false
-    },
-    "Hypervisor": "xen",
-    "IamInstanceProfile": {
-      "Arn": "arn:aws:iam::980088652213:instance-profile/EC2-SSM-Role",
-      "Id": "AIPA6IMOWAG2WX3CX23NA"
-    },
-    "ImageId": "ami-0387413ed05eb20af",
-    "InstanceId": "i-0017acc158386fe68",
-    "InstanceType": "t2.micro",
-    "LaunchTime": "2026-01-19T10:18:27Z",
-    "MaintenanceOptions": {
-      "AutoRecovery": "default",
-      "RebootMigration": "default"
-    },
-    "MetadataOptions": {
-      "HttpEndpoint": "enabled",
-      "HttpProtocolIpv6": "disabled",
-      "HttpPutResponseHopLimit": 2,
-      "HttpTokens": "required",
-      "InstanceMetadataTags": "disabled",
-      "State": "applied"
-    },
-    "Monitoring": {
-      "State": "disabled"
-    },
-    "NetworkInterfaces": [
-      {
-        "Association": {
-          "IpOwnerId": "amazon",
-          "PublicDnsName": "ec2-18-196-193-179.eu-central-1.compute.amazonaws.com",
-          "PublicIp": "18.196.193.179"
-        },
-        "Attachment": {
-          "AttachTime": "2026-01-19T10:18:27Z",
-          "AttachmentId": "eni-attach-0b77ec117e973897b",
-          "DeleteOnTermination": true,
-          "DeviceIndex": 0,
-          "NetworkCardIndex": 0,
-          "Status": "attached"
-        },
-        "Description": "",
-        "Groups": [
-          {
-            "GroupId": "sg-0a13202167906849e",
-            "GroupName": "default"
-          }
-        ],
-        "InterfaceType": "interface",
-        "Ipv6Addresses": [],
-        "MacAddress": "02:11:a0:a2:e4:47",
-        "NetworkInterfaceId": "eni-0155079fdc5e62559",
-        "Operator": {
-          "Managed": false
-        },
-        "OwnerId": "980088652213",
-        "PrivateDnsName": "ip-10-0-14-124.eu-central-1.compute.internal",
-        "PrivateIpAddress": "10.0.14.124",
-        "PrivateIpAddresses": [
-          {
-            "Association": {
-              "IpOwnerId": "amazon",
-              "PublicDnsName": "ec2-18-196-193-179.eu-central-1.compute.amazonaws.com",
-              "PublicIp": "18.196.193.179"
-            },
-            "Primary": true,
-            "PrivateDnsName": "ip-10-0-14-124.eu-central-1.compute.internal",
-            "PrivateIpAddress": "10.0.14.124"
-          }
-        ],
-        "SourceDestCheck": true,
-        "Status": "in-use",
-        "SubnetId": "subnet-0bdafaf83eb04c88d",
-        "VpcId": "vpc-06cc8e4d0c095a384"
-      }
-    ],
-    "NetworkPerformanceOptions": {
-      "BandwidthWeighting": "default"
-    },
-    "Operator": {
-      "Managed": false
-    },
-    "Placement": {
-      "AvailabilityZone": "eu-central-1a",
-      "AvailabilityZoneId": "euc1-az2",
-      "GroupName": "",
-      "Tenancy": "default"
-    },
-    "PlatformDetails": "Linux/UNIX",
-    "PrivateDnsName": "ip-10-0-14-124.eu-central-1.compute.internal",
-    "PrivateDnsNameOptions": {
-      "EnableResourceNameDnsAAAARecord": false,
-      "EnableResourceNameDnsARecord": false,
-      "HostnameType": "ip-name"
-    },
-    "PrivateIpAddress": "10.0.14.124",
-    "ProductCodes": [],
-    "PublicDnsName": "ec2-18-196-193-179.eu-central-1.compute.amazonaws.com",
-    "PublicIpAddress": "18.196.193.179",
-    "RootDeviceName": "/dev/xvda",
-    "RootDeviceType": "ebs",
-    "SecurityGroups": [
-      {
-        "GroupId": "sg-0a13202167906849e",
-        "GroupName": "default"
-      }
-    ],
-    "SourceDestCheck": true,
-    "State": {
-      "Code": 16,
-      "Name": "running"
-    },
-    "StateTransitionReason": "",
-    "SubnetId": "subnet-0bdafaf83eb04c88d",
-    "UsageOperation": "RunInstances",
-    "UsageOperationUpdateTime": "2026-01-19T10:18:27Z",
-    "VirtualizationType": "hvm",
-    "VpcId": "vpc-06cc8e4d0c095a384",
-    "SsmOutput": {
-      "InstanceId": "i-0017acc158386fe68",
-      "CommandId": "82a7f5c7-6580-4daf-a110-e6f151d2c8f9"
-    },
-    "ScriptCheck": {
-      "Status": "Success"
-    },
-    "FinalLogs": {
-      "CloudWatchOutputConfig": {
-        "CloudWatchLogGroupName": "",
-        "CloudWatchOutputEnabled": false
-      },
-      "CommandId": "82a7f5c7-6580-4daf-a110-e6f151d2c8f9",
-      "Comment": "",
-      "DocumentName": "AWS-RunShellScript",
-      "DocumentVersion": "$DEFAULT",
-      "ExecutionElapsedTime": "PT2M30.842S",
-      "ExecutionEndDateTime": "2026-01-19T10:21:29.010Z",
-      "ExecutionStartDateTime": "2026-01-19T10:18:59.010Z",
-      "InstanceId": "i-0017acc158386fe68",
-      "PluginName": "aws:runShellScript",
-      "ResponseCode": 0,
-      "StandardErrorContent": "/usr/local/lib/python3.9/site-packages/boto3/compat.py:89: PythonDeprecationWarning: Boto3 will no longer support Python 3.9 starting April 29, 2026. To continue receiving service updates, bug fixes, and security updates please upgrade to Python 3.10 or later. More information can be found here: https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/\n  warnings.warn(warning, PythonDeprecationWarning)\n",
-      "StandardErrorUrl": "",
-      "StandardOutputContent": "Starting scraper for MEB TTKB 'Mevzuat - KYS' dropdown links...\n============================================================\nNavigating to https://ttkb.meb.gov.tr/...\nLooking for 'Mevzuat - KYS' navbar item...\nFound 'Mevzuat - KYS' using selector: //span[contains(text(), 'Mevzuat - KYS')]\n\nProcessing 'Mevzuat - KYS' dropdown...\nHovering over 'Mevzuat - KYS'...\n  Dropdown opened\n  Found 14 dropdowns with selector: //div[contains(@class, 'sub-dropdown-container')]\n  Found 23 dropdowns with selector: //div[contains(@class, 'dropdown-container')]\n  Processing dropdown menu (ID: no-id)\n    Found 24 links in dropdown\n    Skipping excluded URL: https://ttkb.meb.gov.tr/\n    Skipping excluded URL: https://ttkb.meb.gov.tr/\n    ✓ Added: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS)\n    Extracted 24 direct links from main dropdown\n    Found 2 nested items to process\n  [1/2] Processing nested item: TTKB Mevzuatı...\n    Found 62 potential links from submenu\n      ✓ Added: 1 Sayılı Cumhurbaşkanlığı Kararnamesi: https://ttkb.meb.gov.tr/www/kurum-hakkinda/icerik/491 (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: TTKB Yönetmeliği: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2022_12/10135702_ttkbyonetmeligi20221210.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Ders Kitapları ve Eğitim Araçları Yönetmeliği: https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=39000&MevzuatTur=7&MevzuatTertip=5 (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Denklik Yönetmeliği: https://www.resmigazete.gov.tr/eskiler/2024/07/20240709-9.htm (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Denklik ve Belge Doğrulama Şubesi ile Denklik Merkezleri Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_09/25100332_denklik_yonerge.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Denklik Kılavuzu: https://ttkb.meb.gov.tr/dosyalar/denklik/Denklik_Kilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Milli Eğitim Şurası Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2024_12/26222554_sura_yonergesi.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Araştırma Uygulama İzinleri Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_07/10132655_arastirmauygulamaizinleriyonergesiveekleri.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Araştırma Uygulama İzinleri Başvuru ve Değerlendirme Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_07/19211911_arastirmauygulamaizinleribasvuruvedegerlendirmekilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Eğitim Öğretim Çalışmalarının Planlı Yürütülmesine İlişkin Yönerge: https://mevzuat.meb.gov.tr/dosyalar/2237.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Bilimsel Toplantılara Katılım Yönergesi: https://mevzuat.meb.gov.tr/dosyalar/2243.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Bilimsel Toplantılara Katılım Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_02/20212451_personelin_bilimsel_toplantilara_katilim_kilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Yapay Zekâ Uygulamaları Etik Kurulu Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_10/23133643_yapay_zeka_yonerge.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Eğitimde Yapay Zekâ Uygulamaları Etik Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/09152326_egitimdeyapayzekauygulamalari_etik_kilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: 1 Sayılı Cumhurbaşkanlığı Kararnamesi: https://ttkb.meb.gov.tr/www/kurum-hakkinda/icerik/491 (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: TTKB Yönetmeliği: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2022_12/10135702_ttkbyonetmeligi20221210.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Ders Kitapları ve Eğitim Araçları Yönetmeliği: https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=39000&MevzuatTur=7&MevzuatTertip=5 (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Denklik Yönetmeliği: https://www.resmigazete.gov.tr/eskiler/2024/07/20240709-9.htm (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Denklik ve Belge Doğrulama Şubesi ile Denklik Merkezleri Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_09/25100332_denklik_yonerge.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Denklik Kılavuzu: https://ttkb.meb.gov.tr/dosyalar/denklik/Denklik_Kilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Milli Eğitim Şurası Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2024_12/26222554_sura_yonergesi.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Araştırma Uygulama İzinleri Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_07/10132655_arastirmauygulamaizinleriyonergesiveekleri.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Araştırma Uygulama İzinleri Başvuru ve Değerlendirme Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_07/19211911_arastirmauygulamaizinleribasvuruvedegerlendirmekilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Eğitim Öğretim Çalışmalarının Planlı Yürütülmesine İlişkin Yönerge: https://mevzuat.meb.gov.tr/dosyalar/2237.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Bilimsel Toplantılara Katılım Yönergesi: https://mevzuat.meb.gov.tr/dosyalar/2243.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Bilimsel Toplantılara Katılım Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_02/20212451_personelin_bilimsel_toplantilara_katilim_kilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Yapay Zekâ Uygulamaları Etik Kurulu Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_10/23133643_yapay_zeka_yonerge.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Eğitimde Yapay Zekâ Uygulamaları Etik Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/09152326_egitimdeyapayzekauygulamalari_etik_kilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: 1 Sayılı Cumhurbaşkanlığı Kararnamesi: https://ttkb.meb.gov.tr/www/kurum-hakkinda/icerik/491 (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: TTKB Yönetmeliği: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2022_12/10135702_ttkbyonetmeligi20221210.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Ders Kitapları ve Eğitim Araçları Yönetmeliği: https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=39000&MevzuatTur=7&MevzuatTertip=5 (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Denklik Yönetmeliği: https://www.resmigazete.gov.tr/eskiler/2024/07/20240709-9.htm (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Denklik ve Belge Doğrulama Şubesi ile Denklik Merkezleri Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_09/25100332_denklik_yonerge.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Denklik Kılavuzu: https://ttkb.meb.gov.tr/dosyalar/denklik/Denklik_Kilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Milli Eğitim Şurası Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2024_12/26222554_sura_yonergesi.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Araştırma Uygulama İzinleri Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_07/10132655_arastirmauygulamaizinleriyonergesiveekleri.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Araştırma Uygulama İzinleri Başvuru ve Değerlendirme Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_07/19211911_arastirmauygulamaizinleribasvuruvedegerlendirmekilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Eğitim Öğretim Çalışmalarının Planlı Yürütülmesine İlişkin Yönerge: https://mevzuat.meb.gov.tr/dosyalar/2237.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Bilimsel Toplantılara Katılım Yönergesi: https://mevzuat.meb.gov.tr/dosyalar/2243.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Bilimsel Toplantılara Katılım Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_02/20212451_personelin_bilimsel_toplantilara_katilim_kilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Yapay Zekâ Uygulamaları Etik Kurulu Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_10/23133643_yapay_zeka_yonerge.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Eğitimde Yapay Zekâ Uygulamaları Etik Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/09152326_egitimdeyapayzekauygulamalari_etik_kilavuzu.pdf (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n      ✓ Added: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS --> TTKB Mevzuatı)\n  [2/2] Processing nested item: Kalite Yönetim Sistemi...\n    Found 40 potential links from submenu\n      ✓ Added: Kalite El Kitabı: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/09111225_kaliteelkitabi.pdf (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Süreç El Kitabı: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/08151335_surecelkitabi.pdf (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Formlar: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-formlari/icerik/506 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Listeler: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-listeleri/icerik/507 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Prosedürler: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-prosedurleri/icerik/584 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: İş Akış Şemaları: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-is-akis-semalari/icerik/585 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Talimatlar: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-talimatlari/icerik/586 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Kalite El Kitabı: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/09111225_kaliteelkitabi.pdf (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Süreç El Kitabı: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/08151335_surecelkitabi.pdf (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Formlar: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-formlari/icerik/506 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Listeler: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-listeleri/icerik/507 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Prosedürler: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-prosedurleri/icerik/584 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: İş Akış Şemaları: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-is-akis-semalari/icerik/585 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Talimatlar: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-talimatlari/icerik/586 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Kalite El Kitabı: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/09111225_kaliteelkitabi.pdf (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Süreç El Kitabı: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/08151335_surecelkitabi.pdf (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Formlar: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-formlari/icerik/506 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Listeler: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-listeleri/icerik/507 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Prosedürler: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-prosedurleri/icerik/584 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: İş Akış Şemaları: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-is-akis-semalari/icerik/585 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Talimatlar: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-talimatlari/icerik/586 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n      ✓ Added: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS --> Kalite Yönetim Sistemi)\n  Found 0 dropdowns with selector: //div[contains(@class, 'dropdown-menu')]\n  Found 0 dropdowns with selector: //ul[contains(@class, 'dropdown-menu')]\n  Found 0 dropdowns with selector: //div[contains(@class, 'submenu')]\n  Found 0 dropdowns with selector: //ul[contains(@class, 'submenu')]\n  Extracting all links from visible dropdown structure...\n  Found 23 sub-dropdown-container elements\n  Found 95 total links in all containers (without visibility check)\n    ✓ Added from direct container search: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS)\n    [2/23] Visible: False, Found 32 links in sub-dropdown-container\n    [3/23] Visible: False, Found 2 links in sub-dropdown-container\n    [4/23] Visible: False, Found 10 links in sub-dropdown-container\n    [5/23] Visible: False, Found 8 links in sub-dropdown-container\n    [6/23] Visible: False, Found 2 links in sub-dropdown-container\n    [7/23] Visible: True, Found 24 links in sub-dropdown-container\n    ✓ Added from sub-dropdown: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS)\n    [8/23] Visible: False, Found 14 links in sub-dropdown-container\n    [9/23] Visible: False, Found 7 links in sub-dropdown-container\n    [10/23] Visible: False, Found 16 links in sub-dropdown-container\n    [11/23] Visible: False, Found 3 links in sub-dropdown-container\n    [12/23] Visible: False, Found 3 links in sub-dropdown-container\n    [13/23] Visible: False, Found 2 links in sub-dropdown-container\n    [14/23] Visible: False, Found 14 links in sub-dropdown-container\n    [15/23] Visible: False, Found 4 links in sub-dropdown-container\n    [16/23] Visible: False, Found 2 links in sub-dropdown-container\n    [17/23] Visible: False, Found 1 links in sub-dropdown-container\n    [18/23] Visible: False, Found 2 links in sub-dropdown-container\n    [19/23] Visible: False, Found 7 links in sub-dropdown-container\n    [20/23] Visible: False, Found 2 links in sub-dropdown-container\n    [21/23] Visible: False, Found 2 links in sub-dropdown-container\n    ✓ Added from candidate: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS)\n    ✓ Added from candidate: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS)\n    ✓ Added from candidate: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS)\n    ✓ Added from candidate: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS)\n    ✓ Added from candidate: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS)\n  Trying fallback: Finding links under mevzuat_item...\n  Found 25 links under mevzuat_item\n    Skipping excluded URL: https://ttkb.meb.gov.tr/\n    Skipping excluded URL: https://ttkb.meb.gov.tr/\n    Skipping excluded URL: https://ttkb.meb.gov.tr/\n    ✓ Added from item: Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556 (Path: Mevzuat - KYS)\n  Looking for nested items to hover...\n  Found 24 li elements under mevzuat_item\n    Found potential nested item: TTKB Mevzuatı...\n    Found potential nested item: Kalite Yönetim Sistemi...\n\nBefore final filtering: 24 links\nAfter final filtering: 24 links\n\n============================================================\nFound 24 total links in dropdown menus:\n1. 1 Sayılı Cumhurbaşkanlığı Kararnamesi: https://ttkb.meb.gov.tr/www/kurum-hakkinda/icerik/491\n2. Araştırma Uygulama İzinleri Başvuru ve Değerlendirme Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_07/19211911_arastirmauygulamaizinleribasvuruvedegerlendirmekilavuzu.pdf\n3. Araştırma Uygulama İzinleri Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_07/10132655_arastirmauygulamaizinleriyonergesiveekleri.pdf\n4. Bilimsel Toplantılara Katılım Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_02/20212451_personelin_bilimsel_toplantilara_katilim_kilavuzu.pdf\n5. Bilimsel Toplantılara Katılım Yönergesi: https://mevzuat.meb.gov.tr/dosyalar/2243.pdf\n6. Denklik Kılavuzu: https://ttkb.meb.gov.tr/dosyalar/denklik/Denklik_Kilavuzu.pdf\n7. Denklik Yönetmeliği: https://www.resmigazete.gov.tr/eskiler/2024/07/20240709-9.htm\n8. Denklik ve Belge Doğrulama Şubesi ile Denklik Merkezleri Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_09/25100332_denklik_yonerge.pdf\n9. Ders Kitapları ve Eğitim Araçları Yönetmeliği: https://www.mevzuat.gov.tr/mevzuat?MevzuatNo=39000&MevzuatTur=7&MevzuatTertip=5\n10. Eğitim Öğretim Çalışmalarının Planlı Yürütülmesine İlişkin Yönerge: https://mevzuat.meb.gov.tr/dosyalar/2237.pdf\n11. Eğitimde Yapay Zekâ Uygulamaları Etik Kılavuzu: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/09152326_egitimdeyapayzekauygulamalari_etik_kilavuzu.pdf\n12. Formlar: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-formlari/icerik/506\n13. Kalite El Kitabı: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/09111225_kaliteelkitabi.pdf\n14. Listeler: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-listeleri/icerik/507\n15. Milli Eğitim Şurası Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2024_12/26222554_sura_yonergesi.pdf\n16. Prosedürler: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-prosedurleri/icerik/584\n17. Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556\n18. Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556\n19. Sertifikalarımız: https://ttkb.meb.gov.tr/www/sertifikalarimiz/icerik/556\n20. Süreç El Kitabı: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2026_01/08151335_surecelkitabi.pdf\n21. TTKB Yönetmeliği: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2022_12/10135702_ttkbyonetmeligi20221210.pdf\n22. Talimatlar: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-talimatlari/icerik/586\n23. Yapay Zekâ Uygulamaları Etik Kurulu Yönergesi: https://ttkb.meb.gov.tr/meb_iys_dosyalar/2025_10/23133643_yapay_zeka_yonerge.pdf\n24. İş Akış Şemaları: https://ttkb.meb.gov.tr/www/kalite-yonetim-sistemi-is-akis-semalari/icerik/585\n\n============================================================\nTotal links found: 24\n\nLinks saved to mevzuat_kys_links.json\nUploaded JSON output to s3://goaltech-meb-ttkb/extract-links/mertali.json\n",
-      "StandardOutputUrl": "",
-      "Status": "Success",
-      "StatusDetails": "Success"
-    }
-  }
+    "question": "Yurt dışında bulunan vatandaşlar, eğitim kurumlarından aldıkları diplomaların denklik işlemlerini gerçekleştirmek için hangi temsilciliklere başvuru yapmalıdır?",
+    "ground_truth": "Eğitim Müşavirlikleri veya Eğitim Ataşelikleri.",
+    "ai_answer": "Yurt dışında bulunan vatandaşlar, eğitim kurumlarından aldıkları diplomaların denklik işlemlerini gerçekleştirmek için Türkiye Cumhuriyeti'ne bağlı yurt dışı temsilciliklerinde (eğitim müşavirlikleri/eğitim ataşelikleri) bulunan denklik merkezlerine başvuru yapmalıdırlar.  [1]  Eğer bulundukları ülkede denklik merkezi yoksa, en yakın yurt dışı denklik merkezine başvuruda bulunabilirler. Bakanlıkça yurt dışında eğitim müşavirlikleri ve ataşeliklerinde görevli eğitim müşaviri/eğitim ataşesi ve görevli diğer personelden oluşan denklik merkezleri bu işlemleri yürütmektedir. [2]  Ayrıca yurt dışı temsilciliği bulunmayan ülkelerden Türkiye'de yapılacak başvurular noterden alınan vekâletname yoluyla da yapılabilmektedir. Yurt dışından alınan vekâletnamelerde 1512 sayılı Noterlik Kanunu uyarınca ilgili ülkedeki T.C. büyükelçilik/konsolosluk onayı aranmaktadır. "
+},
+{
+    "question": "Savaş, afet veya sığınma gibi nedenlerle belgelerini ibraz edemeyen veya herhangi bir nedenle öğrenim belgesi bulunmayan kişilerin denklik işlemleri hangi yöntemle yapılır?",
+    "ground_truth": "Seviye Tespit Sınavı sonucuna göre yapılır.",
+    "ai_answer": "Savaş, afet veya sığınma gibi nedenlerle belgelerini ibraz edemeyen veya herhangi bir nedenle öğrenim belgesi bulunmayan kişilerin denklik işlemleri için seviye tespit sınavı (STS) uygulanmaktadır. Denklik Yönetmeliği'nin 15. maddesi kapsamına giren bu durumlardaki kişilere uygulanan sınav neticesinde tespit edilen sınıf seviyesine göre denklik işlemi yapılır ve öğrencinin öğrenimine devamı sağlanır. [1]  Ayrıca, 19/9/2006 tarihli ve 5543 sayılı İskân Kanunu uyarınca göçmen belgesi alanlar da bu kapsamda değerlendirilmektedir. Mecburi ilköğretim çağında olup çeşitli nedenlerle okula gidememiş veya öğrenime ara vermiş çocuklardan özel bir şekilde kendini yetiştirmiş olanlar için de sınavla veya komisyonca tespit edilecek bilgi düzeyine ve yaşına uygun sınıfa kayıt yapılır. [2]  Ders yılı içinde öğrenim belgesi olmadan gelen öğrencilerin eğitim-öğretimden uzak kalmaması için geçici çözüm olarak, velinin hangi ülke, okul ve sınıfta okuduğuna dair yazılı beyanı doğrultusunda geçici olarak okula devamı sağlanabilir. Bu durumda veliden öğrencinin öğrenim belgelerini üç ay içinde getirmesi istenir. Kesin denklik işlemi, öğrencinin velisi tarafından takip edilir."
+},
+{
+    "question": "Denklik işlemi için sunulması gereken diploma veya öğrenim belgelerinin asıllarının zayi olması (kaybolması/yok olması) durumunda, başvurunun kabul edilebilmesi için hangi belgelerin sunulması gerekir?",
+    "ground_truth": "Belgeyi düzenleyen kurum veya ilgili ülkenin yetkili makamlarınca \"aslı gibidir\" onayı yapılmış suretleri (onaylı fotokopileri).",
+    "ai_answer": "Denklik işlemi için sunulması gereken diploma veya öğrenim belgelerinin asıllarının zayi olması (kaybolması/yok olması) durumunda, başvurunun kabul edilebilmesi için Millî Eğitim Bakanlığı Denklik Yönetmeliği'nin 15. maddesi kapsamında değerlendirme yapılmaktadır. Bu durumda başvuru sahibinden aşağıdaki belgeler istenir: [1]  1. Pasaport ve pasaportun eğitim gördüğü ülkeye ait giriş-çıkış sayfaları 2. Pasaport sayfalarının ibraz edilememesi halinde eğitimi süresince ilgili ülkede bulunduğuna dair resmi ve onaylı belge 3. Gerek duyulması halinde yurda giriş-çıkış belgesi 4. İlgili ülke eğitim bakanlığından alınacak kişinin sınavlara yüz yüze girdiğini ifade eden onaylı ve resmi belge [2]  Bu belgeler, başvuru sahibi tarafından e-Denklik sistemine PDF formatında eksiksiz olarak yüklenmeli ve randevu gününde belgelerin onaylı asılları denklik merkezine sunulmalıdır. Denklik merkezi görevlileri, sisteme yüklenen belgeler ile sunulan belgelerin doğruluğunu ve onayların uygunluğunu kontrol etmekle yükümlüdür. [3]  Ayrıca, denklik belgesinin zayi olması halinde (daha önce verilmiş bir denklik belgesinin kaybedilmesi durumunda) izlenecek yol farklıdır: - e-Denklik modülü kullanıma açılmadan önce düzenlenen denklik belgeleri için denklik merkezine başvuru yapılarak belgenin onaylı bir örneği ilgiliye elden teslim edilir veya dilekçede beyan edilen adrese posta ile gönderilir. - e-Denklik modülünün yürürlüğe girmesinden sonra verilen denklik belgeleri için edenklik.meb.gov.tr adresindeki \"Başvuru Sorgulama Ekranı\"ndan belge alınabilir. "
+},
+{
+    "question": "Ders yılı içerisinde gelen ancak öğrenim belgesi bulunmayan öğrenciler, belgelerini temin edene kadar okullara en fazla ne kadar süreyle \"misafir öğrenci\" statüsünde devam edebilirler?",
+    "ground_truth": "3 ay (Üç ay).",
+    "ai_answer": "Ders yılı içinde öğrenim belgesi olmadan gelen öğrencinin, eğitim-öğretimden uzak kalmaması için hangi ülke, okul ve sınıfta okuduğuna dair velisinin yazılı beyanı doğrultusunda geçici olarak okula devamı sağlanır. Ancak veliden öğrencinin öğrenim belgelerini üç ay içinde getirmesi istenir. Bu süre zarfında öğrenci \"misafir öğrenci\" statüsünde okula devam edebilir. İlgili öğrencinin kesin denklik işleminin sonuçlandırılması, öğrencinin velisi tarafından takip edilir. " 
+}]
