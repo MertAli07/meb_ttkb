@@ -11,7 +11,9 @@ logger = logging.getLogger(__name__)
 
 client = boto3.client(
     service_name="bedrock-agent-runtime",
-    region_name="eu-central-1",
+    region_name=st.secrets["aws"]["region"],
+    aws_access_key_id=st.secrets["aws"]["access_key_id"],
+    aws_secret_access_key=st.secrets["aws"]["secret_access_key"],
 )
 
 AGENT_ID = "CHUW9WFEUR"
