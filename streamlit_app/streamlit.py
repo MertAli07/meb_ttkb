@@ -17,7 +17,7 @@ client = boto3.client(
 )
 
 AGENT_ID = "CHUW9WFEUR"
-AGENT_ALIAS_ID = "YAXUOBWQ3B"
+AGENT_ALIAS_ID = "HMMMUQ9SHE"
 
 def _get_user_store():
     try:
