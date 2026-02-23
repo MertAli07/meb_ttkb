@@ -4,3 +4,5 @@ requests>=2.31.0
 webdriver-manager>=4.0.0
 streamlit
 boto3
+openpyxl
+tqdm

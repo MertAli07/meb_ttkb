@@ -18,7 +18,7 @@ client = boto3.client(
 )
 
 AGENT_ID = "CHUW9WFEUR"
-AGENT_ALIAS_ID = "HMMMUQ9SHE"
+AGENT_ALIAS_ID = "OS4IDX7EMV"
 DYNAMODB_TABLE_NAME = "goaltech-poc"
 NO_FEEDBACK_MESSAGES = {
     "Hi! I'm a basic Streamlit chatbot. Ask me anything.",
