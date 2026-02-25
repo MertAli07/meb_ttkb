@@ -306,10 +306,11 @@ st.markdown(
         border-color: #1e88e5 !important;
     }
     /* Hide the red tick marks at both ends */
-    div[data-baseweb="slider"] div[data-testid="stTickBar"] > div {
-        background-color: #1e88e5 !important;
-    }
-    div[data-baseweb="slider"] [class*="Tick"] {
+    div[data-baseweb="slider"] div[data-testid="stTickBar"] > div,
+    div[data-baseweb="slider"] div[data-testid="stTickBar"],
+    div[data-baseweb="slider"] [class*="Tick"],
+    div[data-baseweb="slider"] [class*="tick"],
+    div[data-baseweb="slider"] > div > div:last-child > div {
         background-color: transparent !important;
     }
     /* Filled (active) track */
@@ -328,6 +329,14 @@ st.markdown(
     /* Current value text color */
     div[data-baseweb="slider"] div[data-testid="stThumbValue"] {
         color: #1e88e5 !important;
+    }
+    /* Catch-all: override any red/pink on slider sub-elements */
+    .stSlider div[data-baseweb="slider"] * {
+        border-color: transparent !important;
+    }
+    .stSlider div[data-baseweb="slider"] [role="slider"] {
+        background-color: #1e88e5 !important;
+        border-color: #1e88e5 !important;
     }
     </style>
     """,
