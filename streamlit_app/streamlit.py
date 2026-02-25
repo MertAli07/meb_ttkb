@@ -358,7 +358,7 @@ for message_idx, message in enumerate(st.session_state.messages):
                     st.markdown(f"- `{document}`")
         if message["role"] == "assistant" and message.get("retrieved_chunks"):
             for chunk_idx, chunk_text in enumerate(message["retrieved_chunks"], start=1):
-                with st.expander(f"Chunk {chunk_idx}", expanded=False):
+                with st.expander(f"Metin {chunk_idx}", expanded=False):
                     st.caption(chunk_text)
         if message["role"] == "assistant" and message.get("content") not in NO_FEEDBACK_MESSAGES:
             feedback = message.get("feedback", {})
