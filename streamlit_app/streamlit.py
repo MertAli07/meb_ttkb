@@ -300,43 +300,30 @@ if not check_password():
 st.markdown(
     """
     <style>
-    /* Slider thumb */
-    div[data-baseweb="slider"] [role="slider"] {
-        background-color: #1e88e5 !important;
-        border-color: #1e88e5 !important;
+    /* Override Streamlit primary color for slider scope */
+    .stSlider {
+        --primary-color: #1e88e5;
     }
-    /* Hide the red tick marks at both ends */
-    div[data-baseweb="slider"] div[data-testid="stTickBar"] > div,
-    div[data-baseweb="slider"] div[data-testid="stTickBar"],
-    div[data-baseweb="slider"] [class*="Tick"],
-    div[data-baseweb="slider"] [class*="tick"],
-    div[data-baseweb="slider"] > div > div:last-child > div {
+    /* Blanket: force every div inside the slider to not be red */
+    .stSlider div[data-baseweb="slider"] div {
         background-color: transparent !important;
     }
     /* Filled (active) track */
-    div[data-baseweb="slider"] div[role="slider"] ~ div,
-    div[data-baseweb="slider"] > div > div > div:first-child {
+    .stSlider div[data-baseweb="slider"] > div > div > div:first-child {
         background-color: #1e88e5 !important;
     }
     /* Unfilled track */
-    div[data-baseweb="slider"] > div > div > div:nth-child(2) {
+    .stSlider div[data-baseweb="slider"] > div > div > div:nth-child(2) {
         background-color: #546e7a !important;
     }
-    /* Streamlit slider wrapper - filled track (first inner div) */
-    .stSlider [data-testid="stTickBar"] > div {
-        background-color: transparent !important;
-    }
-    /* Current value text color */
-    div[data-baseweb="slider"] div[data-testid="stThumbValue"] {
-        color: #1e88e5 !important;
-    }
-    /* Catch-all: override any red/pink on slider sub-elements */
-    .stSlider div[data-baseweb="slider"] * {
-        border-color: transparent !important;
-    }
+    /* Slider thumb */
     .stSlider div[data-baseweb="slider"] [role="slider"] {
         background-color: #1e88e5 !important;
         border-color: #1e88e5 !important;
+    }
+    /* Current value text */
+    .stSlider div[data-baseweb="slider"] div[data-testid="stThumbValue"] {
+        color: #1e88e5 !important;
     }
     </style>
     """,
