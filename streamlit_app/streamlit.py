@@ -305,25 +305,29 @@ st.markdown(
         background-color: #1e88e5 !important;
         border-color: #1e88e5 !important;
     }
-    /* Filled (active) portion of the track */
-    div[data-baseweb="slider"] div[data-testid="stThumbValue"],
+    /* Hide the red tick marks at both ends */
+    div[data-baseweb="slider"] div[data-testid="stTickBar"] > div {
+        background-color: #1e88e5 !important;
+    }
+    div[data-baseweb="slider"] [class*="Tick"] {
+        background-color: transparent !important;
+    }
+    /* Filled (active) track */
+    div[data-baseweb="slider"] div[role="slider"] ~ div,
     div[data-baseweb="slider"] > div > div > div:first-child {
         background-color: #1e88e5 !important;
     }
-    /* Unfilled portion of the track */
+    /* Unfilled track */
     div[data-baseweb="slider"] > div > div > div:nth-child(2) {
-        background-color: #eef2f7 !important;
+        background-color: #546e7a !important;
     }
-    /* Streamlit's own slider track elements */
-    .stSlider > div > div > div > div {
-        background-color: #1e88e5 !important;
+    /* Streamlit slider wrapper - filled track (first inner div) */
+    .stSlider [data-testid="stTickBar"] > div {
+        background-color: transparent !important;
     }
-    .stSlider > div > div > div > div:last-child {
-        background-color: #eef2f7 !important;
-    }
-    .stSlider [role="slider"] {
-        background-color: #1e88e5 !important;
-        border-color: #1e88e5 !important;
+    /* Current value text color */
+    div[data-baseweb="slider"] div[data-testid="stThumbValue"] {
+        color: #1e88e5 !important;
     }
     </style>
     """,
