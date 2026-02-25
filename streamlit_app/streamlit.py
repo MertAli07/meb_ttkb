@@ -300,14 +300,28 @@ if not check_password():
 st.markdown(
     """
     <style>
-    /* Keep the unfilled track neutral, make only filled part blue. */
-    div[data-baseweb="slider"] > div > div > div:nth-child(1) {
+    /* Slider thumb */
+    div[data-baseweb="slider"] [role="slider"] {
+        background-color: #1e88e5 !important;
+        border-color: #1e88e5 !important;
+    }
+    /* Filled (active) portion of the track */
+    div[data-baseweb="slider"] div[data-testid="stThumbValue"],
+    div[data-baseweb="slider"] > div > div > div:first-child {
         background-color: #1e88e5 !important;
     }
+    /* Unfilled portion of the track */
     div[data-baseweb="slider"] > div > div > div:nth-child(2) {
         background-color: #eef2f7 !important;
     }
-    div[data-baseweb="slider"] [role="slider"] {
+    /* Streamlit's own slider track elements */
+    .stSlider > div > div > div > div {
+        background-color: #1e88e5 !important;
+    }
+    .stSlider > div > div > div > div:last-child {
+        background-color: #eef2f7 !important;
+    }
+    .stSlider [role="slider"] {
         background-color: #1e88e5 !important;
         border-color: #1e88e5 !important;
     }
