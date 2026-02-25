@@ -300,9 +300,12 @@ if not check_password():
 st.markdown(
     """
     <style>
-    /* Style the feedback rating slider with a blue accent. */
-    div[data-baseweb="slider"] > div > div {
+    /* Keep the unfilled track neutral, make only filled part blue. */
+    div[data-baseweb="slider"] > div > div > div:nth-child(1) {
         background-color: #1e88e5 !important;
+    }
+    div[data-baseweb="slider"] > div > div > div:nth-child(2) {
+        background-color: #d1d5db !important;
     }
     div[data-baseweb="slider"] [role="slider"] {
         background-color: #1e88e5 !important;
