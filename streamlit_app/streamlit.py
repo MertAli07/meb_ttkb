@@ -297,6 +297,22 @@ st.set_page_config(page_title="Chatbot Home", page_icon="💬", layout="centered
 if not check_password():
     st.stop()
 
+st.markdown(
+    """
+    <style>
+    /* Style the feedback rating slider with a blue accent. */
+    div[data-baseweb="slider"] > div > div {
+        background-color: #1e88e5 !important;
+    }
+    div[data-baseweb="slider"] [role="slider"] {
+        background-color: #1e88e5 !important;
+        border-color: #1e88e5 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.title("Home")
 st.write("Welcome to the basic chatbot demo. This is the Home page.")
 
@@ -320,11 +336,11 @@ for message_idx, message in enumerate(st.session_state.messages):
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
         if message["role"] == "assistant" and message.get("documents"):
-            with st.expander("Documents consulted", expanded=False):
+            with st.expander("Getirilen belgeler", expanded=False):
                 for document in message["documents"]:
                     st.markdown(f"- `{document}`")
         if message["role"] == "assistant" and message.get("retrieved_chunks"):
-            with st.expander("Retrieved chunks", expanded=False):
+            with st.expander("Getirilen metinler", expanded=False):
                 for chunk_idx, chunk_text in enumerate(message["retrieved_chunks"], start=1):
                     st.markdown(f"**Chunk {chunk_idx}**")
                     st.caption(chunk_text)
@@ -335,20 +351,20 @@ for message_idx, message in enumerate(st.session_state.messages):
             note_key = f"feedback_note_{message['id']}"
 
             with st.form(feedback_form_id):
-                st.caption("Rate this answer")
+                st.caption("Bu cevabı değerlendirin")
                 score = st.slider(
-                    "Points",
+                    "Puan",
                     min_value=0,
                     max_value=10,
                     value=feedback.get("score", 5),
                     key=score_key,
                 )
                 note = st.text_area(
-                    "Note (optional)",
+                    "Geri Bildirim",
                     value=feedback.get("note", ""),
                     key=note_key,
                 )
-                submitted = st.form_submit_button("Submit feedback")
+                submitted = st.form_submit_button("Gönder")
 
             if submitted:
                 st.session_state.messages[message_idx]["feedback"] = {
