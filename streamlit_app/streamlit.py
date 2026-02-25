@@ -432,7 +432,7 @@ if user_prompt:
                     st.markdown(f"- `{document}`")
         if retrieved_chunks:
             for idx, chunk_text in enumerate(retrieved_chunks, start=1):
-                with st.expander(f"Chunk {idx}", expanded=False):
+                with st.expander(f"Metin {idx}", expanded=False):
                     st.caption(chunk_text)
     assistant_message = {
         "id": str(uuid.uuid4()),
