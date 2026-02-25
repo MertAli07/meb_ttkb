@@ -305,7 +305,7 @@ st.markdown(
         background-color: #1e88e5 !important;
     }
     div[data-baseweb="slider"] > div > div > div:nth-child(2) {
-        background-color: #d1d5db !important;
+        background-color: #eef2f7 !important;
     }
     div[data-baseweb="slider"] [role="slider"] {
         background-color: #1e88e5 !important;
