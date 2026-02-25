@@ -357,9 +357,8 @@ for message_idx, message in enumerate(st.session_state.messages):
                 for document in message["documents"]:
                     st.markdown(f"- `{document}`")
         if message["role"] == "assistant" and message.get("retrieved_chunks"):
-            with st.expander("Getirilen metinler", expanded=False):
-                for chunk_idx, chunk_text in enumerate(message["retrieved_chunks"], start=1):
-                    st.markdown(f"**Chunk {chunk_idx}**")
+            for chunk_idx, chunk_text in enumerate(message["retrieved_chunks"], start=1):
+                with st.expander(f"Chunk {chunk_idx}", expanded=False):
                     st.caption(chunk_text)
         if message["role"] == "assistant" and message.get("content") not in NO_FEEDBACK_MESSAGES:
             feedback = message.get("feedback", {})
@@ -432,9 +431,8 @@ if user_prompt:
                 for document in consulted_documents:
                     st.markdown(f"- `{document}`")
         if retrieved_chunks:
-            with st.expander("Retrieved chunks", expanded=False):
-                for idx, chunk_text in enumerate(retrieved_chunks, start=1):
-                    st.markdown(f"**Chunk {idx}**")
+            for idx, chunk_text in enumerate(retrieved_chunks, start=1):
+                with st.expander(f"Chunk {idx}", expanded=False):
                     st.caption(chunk_text)
     assistant_message = {
         "id": str(uuid.uuid4()),
