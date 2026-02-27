@@ -297,38 +297,33 @@ st.set_page_config(page_title="Chatbot Home", page_icon="💬", layout="centered
 if not check_password():
     st.stop()
 
-st.markdown(
-    """
-    <style>
-    /* Override Streamlit primary color for slider scope */
-    .stSlider {
-        --primary-color: #1e88e5;
-    }
-    /* Blanket: force every div inside the slider to not be red */
-    .stSlider div[data-baseweb="slider"] div {
-        background-color: transparent !important;
-    }
-    /* Filled (active) track */
-    .stSlider div[data-baseweb="slider"] > div > div > div:first-child {
-        background-color: #1e88e5 !important;
-    }
-    /* Unfilled track */
-    .stSlider div[data-baseweb="slider"] > div > div > div:nth-child(2) {
-        background-color: #546e7a !important;
-    }
-    /* Slider thumb */
-    .stSlider div[data-baseweb="slider"] [role="slider"] {
-        background-color: #1e88e5 !important;
-        border-color: #1e88e5 !important;
-    }
-    /* Current value text */
-    .stSlider div[data-baseweb="slider"] div[data-testid="stThumbValue"] {
-        color: #1e88e5 !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+# st.markdown(
+#     """
+#     <style>
+#     /* Filled (active) track */
+#     .stSlider [data-baseweb="slider"] [role="progressbar"] > div {
+#         background-color: #1e88e5 !important;
+#     }
+#     /* Slider thumb (knob) */
+#     .stSlider [data-baseweb="slider"] [role="slider"] {
+#         background-color: #1e88e5 !important;
+#         border-color: #1e88e5 !important;
+#     }
+#     /* Thumb value (number bubble above thumb) */
+#     .stSlider [data-baseweb="slider"] [data-testid="stThumbValue"],
+#     .stSlider [data-baseweb="slider"] [role="slider"] > div {
+#         color: #1e88e5 !important;
+#         background-color: transparent !important;
+#     }
+#     /* Catch-all: any remaining red accent inside the slider */
+#     .stSlider [data-baseweb="slider"] div[style*="rgb(255"],
+#     .stSlider [data-baseweb="slider"] div[style*="#ff"] {
+#         background-color: #1e88e5 !important;
+#     }
+#     </style>
+#     """,
+#     unsafe_allow_html=True,
+# )
 
 st.title("TTKB Yapay Zekâ Asistanı")
 st.write("Hoş geldiniz. Bu asistan yalnızca Kalite Yönetim Sistemi (KYS) ve mevzuat kapsamındaki soruları yanıtlamaktadır.")
@@ -358,9 +353,10 @@ for message_idx, message in enumerate(st.session_state.messages):
                 for document in message["documents"]:
                     st.markdown(f"- `{document}`")
         if message["role"] == "assistant" and message.get("retrieved_chunks"):
-            for chunk_idx, chunk_text in enumerate(message["retrieved_chunks"], start=1):
-                with st.expander(f"Metin {chunk_idx}", expanded=False):
-                    st.caption(chunk_text)
+            with st.expander(f"Metinler", expanded=False):
+                for chunk_idx, chunk_text in enumerate(message["retrieved_chunks"], start=1):
+                    with st.expander(f"Metin {chunk_idx}", expanded=False):
+                        st.caption(chunk_text)
         if message["role"] == "assistant" and message.get("content") not in NO_FEEDBACK_MESSAGES:
             feedback = message.get("feedback", {})
             feedback_form_id = f"feedback_form_{message['id']}"
