@@ -21,7 +21,7 @@ AGENT_ID = "CHUW9WFEUR"
 AGENT_ALIAS_ID = "SDC3Y4SEIM"
 DYNAMODB_TABLE_NAME = "goaltech-poc"
 NO_FEEDBACK_MESSAGES = {
-    "Hi! I'm a basic Streamlit chatbot. Ask me anything.",
+    "Lütfen ilgili kapsamda sorunuzu giriniz.",
     "Chat cleared. How can I help?",
 }
 
@@ -73,7 +73,7 @@ def init_chat_state() -> None:
             {
                 "id": str(uuid.uuid4()),
                 "role": "assistant",
-                "content": "Hi! I'm a basic Streamlit chatbot. Ask me anything.",
+                "content": "Lütfen ilgili kapsamda sorunuzu giriniz.",
             }
         ]
     for message in st.session_state.messages:
@@ -330,8 +330,9 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.title("Home")
-st.write("Welcome to the basic chatbot demo. This is the Home page.")
+st.title("TTKB Yapay Zekâ Asistanı")
+st.write("Hoş geldiniz. Bu asistan yalnızca Kalite Yönetim Sistemi (KYS) ve mevzuat kapsamındaki soruları yanıtlamaktadır.")
+st.write("(Öğretim programlarının ve ders kitaplarının içeriğine yönelik bilgi veremez).")
 
 init_chat_state()
 
