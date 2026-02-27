@@ -156,6 +156,33 @@ def _extract_retrieved_chunks(trace_payload) -> list[str]:
         "excerpt",
     )
     ignored_exact_values = {"orchestrationtrace", "preprocessingtrace", "postprocessingtrace"}
+    ignored_prompt_prefixes = (
+        '{"system":',
+        "{'system':",
+        '"system":',
+        "'system':",
+    )
+    ignored_output_prefixes = (
+        '{"output":{"message":',
+        "{'output':{'message':",
+    )
+
+    def is_system_prompt_like(value: str) -> bool:
+        lowered = value.lower()
+        if lowered.startswith(ignored_prompt_prefixes):
+            return True
+        # Bedrock traces may include JSON-like wrappers that contain the system prompt.
+        if lowered.startswith("{") and '"system"' in lowered[:200]:
+            return True
+        return False
+
+    def is_output_wrapper_like(value: str) -> bool:
+        lowered = value.lower()
+        if lowered.startswith(ignored_output_prefixes):
+            return True
+        if lowered.startswith("{") and '"role":"assistant"' in lowered[:250] and '"content":[{"text"' in lowered[:350]:
+            return True
+        return False
 
     def walk(node, parent_key: str = "") -> None:
         if isinstance(node, dict):
@@ -176,7 +203,16 @@ def _extract_retrieved_chunks(trace_payload) -> list[str]:
         is_content_key = any(token in lowered_parent_key for token in content_keys)
         looks_like_chunk = len(cleaned) >= 40 and not _looks_like_document_reference(cleaned)
         is_not_noise = cleaned.lower() not in ignored_exact_values
-        if is_content_key and looks_like_chunk and is_not_noise and cleaned not in seen:
+        is_not_system_prompt = not is_system_prompt_like(cleaned)
+        is_not_output_wrapper = not is_output_wrapper_like(cleaned)
+        if (
+            is_content_key
+            and looks_like_chunk
+            and is_not_noise
+            and is_not_system_prompt
+            and is_not_output_wrapper
+            and cleaned not in seen
+        ):
             seen.add(cleaned)
             retrieved_chunks.append(cleaned)
 
@@ -296,34 +332,6 @@ st.set_page_config(page_title="Chatbot Home", page_icon="💬", layout="centered
 
 if not check_password():
     st.stop()
-
-# st.markdown(
-#     """
-#     <style>
-#     /* Filled (active) track */
-#     .stSlider [data-baseweb="slider"] [role="progressbar"] > div {
-#         background-color: #1e88e5 !important;
-#     }
-#     /* Slider thumb (knob) */
-#     .stSlider [data-baseweb="slider"] [role="slider"] {
-#         background-color: #1e88e5 !important;
-#         border-color: #1e88e5 !important;
-#     }
-#     /* Thumb value (number bubble above thumb) */
-#     .stSlider [data-baseweb="slider"] [data-testid="stThumbValue"],
-#     .stSlider [data-baseweb="slider"] [role="slider"] > div {
-#         color: #1e88e5 !important;
-#         background-color: transparent !important;
-#     }
-#     /* Catch-all: any remaining red accent inside the slider */
-#     .stSlider [data-baseweb="slider"] div[style*="rgb(255"],
-#     .stSlider [data-baseweb="slider"] div[style*="#ff"] {
-#         background-color: #1e88e5 !important;
-#     }
-#     </style>
-#     """,
-#     unsafe_allow_html=True,
-# )
 
 st.title("TTKB Yapay Zekâ Asistanı")
 st.write("Hoş geldiniz. Bu asistan yalnızca Kalite Yönetim Sistemi (KYS) ve mevzuat kapsamındaki soruları yanıtlamaktadır.")
