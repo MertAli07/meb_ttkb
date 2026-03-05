@@ -400,7 +400,7 @@ for message_idx, message in enumerate(st.session_state.messages):
                 )
                 st.success("Feedback saved.")
 
-user_prompt = st.chat_input("Type your message")
+user_prompt = st.chat_input("Sorunuzu giriniz.")
 if user_prompt:
     st.session_state.messages.append(
         {"id": str(uuid.uuid4()), "role": "user", "content": user_prompt}
