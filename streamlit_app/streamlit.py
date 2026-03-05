@@ -18,7 +18,7 @@ client = boto3.client(
 )
 
 AGENT_ID = "CHUW9WFEUR"
-AGENT_ALIAS_ID = "SDC3Y4SEIM"
+AGENT_ALIAS_ID = "BWRPOF380J"
 DYNAMODB_TABLE_NAME = "goaltech-poc"
 NO_FEEDBACK_MESSAGES = {
     "Lütfen ilgili kapsamda sorunuzu giriniz.",
