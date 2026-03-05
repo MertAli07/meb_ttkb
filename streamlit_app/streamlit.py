@@ -43,16 +43,16 @@ def check_password() -> bool:
     users = _get_user_store()
     if not users:
         st.error(
-            "Authentication is not configured. "
+            "Kimlik doğrulama yapılmadı. "
             "Please set secrets: auth.users.<username> = <sha256_password_hash>."
         )
         st.stop()
 
     with st.form("login"):
-        st.write("Please sign in.")
-        username = st.text_input("Username")
-        password = st.text_input("Password", type="password")
-        submitted = st.form_submit_button("Sign in")
+        st.write("Giriş yapınız.")
+        username = st.text_input("Kullanıcı adı")
+        password = st.text_input("Şifre", type="password")
+        submitted = st.form_submit_button("Giriş yap")
 
     if submitted:
         stored_hash = users.get(username)
@@ -60,7 +60,7 @@ def check_password() -> bool:
             st.session_state.authenticated = True
             st.session_state.username = username
             return True
-        st.error("Invalid username or password.")
+        st.error("Geçersiz kullanıcı adı veya şifre.")
 
     return False
 
@@ -340,16 +340,16 @@ st.write("(Öğretim programlarının ve ders kitaplarının içeriğine yöneli
 init_chat_state()
 
 with st.sidebar:
-    st.subheader("Controls")
-    if st.button("Sign out"):
+    st.subheader("Kontroller")
+    if st.button("Çıkış yap"):
         st.session_state.authenticated = False
         st.session_state.username = None
         st.rerun()
-    if st.button("Clear chat"):
+    if st.button("Sohbeti temizle"):
         st.session_state.messages = [
             {
                 "role": "assistant",
-                "content": "Chat cleared. How can I help?",
+                "content": "Sohbet temizlendi. Nasıl yardımcı olabilirim?",
             }
         ]
 
